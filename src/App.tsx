@@ -1,24 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './components/Home';
 
 function App() {
+  let myName: string = "Dima";
+  let age: number = 25;
+  let animalUrl: string = "https://i0.wp.com/thepixelnomad.com/wp-content/uploads/2023/11/210920-Shire-Rookhills-Emperor047-edit.jpg?fit=1500%2C1000&ssl=1";
+
+  let userName: string = "Dima";
+  let lastLogin: string = "16/9/24";
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar user={userName} lastLogin = {lastLogin}/>
+      <Home  userName = {userName}/>
+      <h1>{myName}</h1>
+      <p>Hello from App component</p>
+      <img src={animalUrl} alt="Horse picture" />
+      <div>Animal age is {age + 10}</div>
+      <p>{Math.random() * 100}</p>
+      <Footer developerName = {myName}/>
     </div>
   );
 }
